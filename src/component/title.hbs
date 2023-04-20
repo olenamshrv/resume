@@ -1,7 +1,11 @@
 <div>
-  {{#if big}}
-    <h2>{{data}}</h2>
+  {{#if giant}}
+    <h1>{{data}}</h1>
   {{else}}
-    <h3>{{data}}</h3>
+    {{#if big}}
+      <h2>{{data}}</h2>
+    {{else}}
+      <h3>{{data}}</h3>
+    {{/if}}
   {{/if}}
 </div>

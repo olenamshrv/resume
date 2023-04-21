@@ -9,15 +9,15 @@
         <br> 
 
         <div>
-            {{#with address}}
-                <em>
-                    <b>
-                        <p>{{street}}</p>
-                        <p>{{city}} {{state}} {{zip}}</p>
-                        <p>{{country}}</p>
-                    </b>
-                </em>
-            {{/with}}
+            <address>
+                {{#with address}}
+                        <b>
+                            <p>{{street}}</p>
+                            <p>{{city}} {{state}} {{zip}}</p>
+                            <p>{{country}}</p>
+                        </b>
+                {{/with}}
+            </address>
         </div>
 
         <br>

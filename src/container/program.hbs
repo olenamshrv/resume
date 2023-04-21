@@ -54,8 +54,8 @@
                                     </em>
                                 </div>
 
-                                {{#with details}}
-                                    <div>
+                                <div>
+                                    {{#with details}}
                                         {{#with museum}}
                                             <div>
                                                 <h4>{{name}}</h4>
@@ -73,32 +73,37 @@
                                                         {{#each exhibits}}
                                                             <li>
                                                                 <h4>{{name}}</h4>
-                                                                <div>
-                                                                    {{#if artist includeZero=true}}
+                                                                {{#if artist includeZero=true}}
+                                                                    <div>
                                                                         Artist:
                                                                         <em>
                                                                             {{artist}}
                                                                         </em>
-                                                                    {{/if}}
-                                                                </div>
+                                                                    </div>
+                                                                    <br>
+                                                                {{/if}}
+
                                                                 <div>
-                                                                    {{#if audio_guide}}
+                                                                    Description:
+                                                                    {{description}}
+                                                                </div>
+                                                                {{#if audio_guide}}
+                                                                    <div>
                                                                         <br>
                                                                         With audio guide
-                                                                    {{/if}}
-                                                                </div>
+                                                                    </div>
+                                                                {{/if}}
                                                                 <br>
-
                                                             </li>
                                                         {{/each}}
                                                     </ul>
                                                 </div>
-                                            </div>
-                                        {{/with}}
-                                    </div>
+                                            </div>    
+                                    {{/with}}
+                                </div>
 
+                                {{#with venue}}
                                     <div>
-                                        {{#with venue}}
                                             <br>
                                             <div>
                                                 Venue: 
@@ -114,12 +119,13 @@
                                             <div>
                                                 {{> location address=address city=city country=country}}
                                             </div>
-
-                                        {{/with}}
                                     </div>
+                                {{/with}}
+                                    
 
-                                    <div>
-                                        {{#if performers}}  
+
+                                    {{#if performers}}  
+                                        <div>
                                             <br>
                                             <strong>Performers</strong>                                      
                                             <br>
@@ -142,8 +148,9 @@
                                                     </li>
                                                 {{/each}}
                                             </ul>
-                                        {{/if}}
-                                    </div>
+                                        </div>                                            
+                                    {{/if}}
+
 
                                     <div>
                                         {{#with guide}}

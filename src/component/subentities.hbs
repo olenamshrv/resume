@@ -1,0 +1,30 @@
+<ul>
+  {{#each subentities}}
+    <li>
+      <div>
+        {{#if name}}
+          {{name}}
+        {{/if}}
+        {{#if value}}
+          {{value}}
+        {{/if}}
+      </div>
+
+      <br />
+
+      {{#if type}}
+        <div>
+          Type:
+          {{type}}
+        </div>
+        <br />
+      {{/if}}
+
+      <div>
+        Description:
+        {{description}}
+      </div>
+      <br />
+    </li>
+  {{/each}}
+</ul>

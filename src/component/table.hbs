@@ -1,0 +1,43 @@
+<div>
+  <table>
+    <caption>
+      <strong>
+        <em>
+          {{name}}
+        </em>
+      </strong>
+    </caption>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>{{nameSub}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each row}}
+        <tr>
+          <td>
+            <b>
+              {{name}}
+            </b>
+          </td>
+          <td>
+            {{description}}
+          </td>
+          <td>
+            {{#if attributes}}
+                {{> subtable colName="Name" withType=false rowSub=attributes}}
+            {{/if}}
+            {{#if values}}
+                {{> subtable colName="Value" withType=false rowSub=values}}
+            {{/if}}
+            {{#if parameters}}
+                {{> subtable colName="Name" withType=true rowSub=parameters}}
+            {{/if}}
+          </td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>

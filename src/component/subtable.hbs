@@ -1,0 +1,42 @@
+<table>
+  <thead>
+    <tr>
+      <th>
+        <em>
+          {{colName}}
+        </em>
+      </th>
+      {{#if withType}}
+        <th>
+          Type
+          <br />
+        </th>
+      {{/if}}
+      <th>
+        <em>
+          Description
+        </em>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each rowSub}}
+      <tr>
+        <td>
+          <i>
+            {{name}}
+          </i>
+        </td>
+        {{#if type}}
+          <td>
+            {{type}}
+            <br />
+          </td>
+        {{/if}}
+        <td>
+          {{description}}
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>

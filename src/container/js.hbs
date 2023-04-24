@@ -1,0 +1,104 @@
+<dev>
+    <main>
+        {{> title data=name giant=true}}
+        <hr>
+
+        <section>
+            <div>
+                <div>
+                    <em>
+                        <strong>
+                            About {{name}}
+                        </strong>
+                    </em>
+                </div>
+                <br>
+                <div>
+                    {{description}}
+                </div>
+            </div>
+        </section>
+
+        <hr>
+
+        <section>
+            {{> title data="History" big=true}}
+            <div>
+                {{#with history}}
+                    Was founded in {{year}} by {{founder}}
+                {{/with}}
+            </div>
+        </section> 
+
+        <br>  
+
+        <hr>
+
+        <br>
+
+        {{> section section="Types" hasName=false things=types}}
+        
+        <br>
+
+        <hr>
+
+        <section>
+            {{> title data="Syntax" big=true}}
+            {{#with syntax}}
+                {{> list withName=true name='Variables' items=variables}}
+                {{> list hwithName=true name='Functions' items=functions}}
+                {{> list withName=true name='Conditionals' items=conditionals}}
+                {{> list withName=true name='Loops' items=loops}}
+                {{> list withName=true name='Classes' items=classes}}
+            {{/with}}
+        </section>
+
+        <hr>
+
+        {{> section section="Features" hasName=false things=features}}
+
+        <hr>
+
+        {{> section section="Libraries" hasName=false things=libraries}}
+
+        <hr>
+
+        {{> section section="Tools" hasName=false things=tools}}
+
+        <hr>
+
+        <table>
+            <caption>
+                <strong>
+                    <h2>
+                        Community
+                    </h2>
+                </caption>
+            <thead>
+                <tr>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Type
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each community}}
+                    <tr>
+                        <td>
+                            {{name}}
+                        </td>
+                        <td>
+                            {{type}}
+                        </td>
+                    </tr>
+                {{/each}}
+            </tbody>
+        </table>
+
+        <br>
+
+    </main>
+</dev>

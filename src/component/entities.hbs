@@ -1,0 +1,38 @@
+<div>
+    <b>
+        <em>{{name}}:</em>
+    </b>
+    <ul>
+        {{#each entities}}
+        <br>
+            <li>
+                <div>
+                    <b>
+                        <code>
+                          {{name}}
+                        </code>
+                    </b>
+                </div>
+                <br>
+                <div>
+                    Description:
+                    {{description}}
+                </div>
+                <br>
+                <div>
+                    <em>
+                        {{../nameSub}}:
+                    </em>
+                    <br>
+                    <br>
+
+                    {{> subentities subentities=attributes}}
+                    {{> subentities subentities=values}}
+                    {{> subentities subentities=parameters}}
+
+                </div>
+            </li>
+        {{/each}}
+        <br>
+    </ul>
+</div>

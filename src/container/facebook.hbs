@@ -1,0 +1,87 @@
+<div>
+    <main>
+        {{> title data=name giant=true}}
+
+        <hr>
+        <hr>
+
+        <section>
+            {{> title data="Users:" big=true}}
+            <hr>
+            <ul>
+                {{#each users}}
+                    <li>
+                        <div>
+                            {{> user id=id name=name gender=gender age=age}}
+
+                            <div>
+                                {{> title data="Friends:" big=false}}
+                                <ul>
+                                    {{#each friends}}
+                                        <li>
+                                            {{> user id=id name=name gender=gender age=age}}
+                                            <br>
+                                            <div>
+                                                <div>
+                                                    <strong>
+                                                        <em>
+                                                            Mutual friends:
+                                                        </em>
+                                                    </strong>
+                                                </div>
+                                                <br>
+                                                <br>
+                                                <ul>
+                                                    {{#each mutual_friends}}
+                                                        <li>
+                                                            {{> user id=id name=name gender=gender age=age}}
+                                                            {{#if mutual_friends}}
+                                                                <div>
+                                                                    <small>
+                                                                        <div>
+                                                                            <strong>
+                                                                                <em>
+                                                                                    Mutual friends:
+                                                                                </em>
+                                                                            </strong>
+                                                                        </div> 
+                                                                        <br>  
+                                                                        <ul>
+                                                                            {{#each mutual_friends}}
+                                                                                <li>
+                                                                                    {{> user id=id name=name gender=gender age=age}}
+                                                                                </li>
+                                                                            {{/each}}
+                                                                        </ul>
+                                                                    </small>
+                                                                </div>
+                                                            {{/if}}
+                                                            <br>
+                                                        </li>
+                                                    {{/each}}
+                                                </ul>
+                                            </div>
+
+
+                                            {{> groups groups=groups internal=true}}
+                                            
+                                        </li>
+                                    {{/each}}
+                                </ul>
+                            </div>
+                            
+                            {{> groups groups=groups internal=false}}
+
+                            <br>
+                            <br>
+                        </div>
+                        <hr>
+                    </li>
+                    <br>
+                    <br>
+                {{/each}}
+            </ul>
+        </section>
+
+    </main>
+</div>

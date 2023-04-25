@@ -1,0 +1,56 @@
+{{#if groups}}                                        
+    <div>
+        {{#if internal}}
+            <div>
+                <strong>
+                    <em>
+                        Groups:
+                    </em>
+                </strong>
+            </div>
+        {{else}}
+            {{> title data="Groups:" big=false}}
+        {{/if}}
+        <br>
+
+        <ul>
+            {{#each groups}}
+                <li>
+                    <div>
+                        ID:
+                        {{id}}
+                    </div>
+                    <br>
+                    <div>
+                        <b>
+                            Name:
+                        </b>
+                        {{name}}
+                    </div>
+                    <br>
+                    <div>
+                        Description:
+                        {{description}}
+                    </div>
+                    <br>
+                    <div>
+                        <strong>
+                            <em>
+                                Members:
+                            </em>
+                        </strong>
+                        <br>
+                        <br>
+                        <ul>
+                            {{#each members}}
+                                <li>
+                                    {{> user id=id name=name gender=gender age=age}}
+                                </li>
+                            {{/each}}
+                        </ul>
+                    </div>
+                </li>
+            {{/each}}
+        </ul>
+    </div>
+{{/if}}

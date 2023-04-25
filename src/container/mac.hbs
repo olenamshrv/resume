@@ -1,0 +1,289 @@
+<div>
+  <main>
+        {{> title data=name giant=true}}
+
+        <br>
+
+        <div>
+            Description
+            {{description}}
+        </div>
+        <br>
+        <div>
+            Price
+            {{price}}
+        </div>
+        <br>
+        <div>
+            Category
+            {{category}}
+        </div>
+        <br>
+        <br>
+        <div>
+            {{> title data="Features" big=true}}
+            <hr>
+            <br>
+
+            {{#with features}}
+                <div>
+                    {{> title data="Processor" big=false}}
+                    <br>
+
+                    {{#with processor}}
+                        <div>
+                            Brand:
+                            {{brand}}
+                        </div>
+                        <br>
+                        <div>
+                            Model:
+                            {{model}}
+                        </div>
+                        <br>
+                        <div>
+                            Speed:
+                            {{speed}}
+                        </div>
+                        <br>
+                        <div>
+                            Cores:
+                            {{cores}}
+                        </div>
+                        <br>     
+                        <div>
+                            Cache:
+                            {{cache}}
+                        </div>                    
+                    {{/with}}
+                </div>
+
+                <br>
+
+                <div>
+                    {{> title data="Memory" big=false}}
+                    <br>
+                    {{#with memory}}
+                        <div>
+                            Type:
+                            {{type}}
+                        </div>
+                        <br>
+                        <div>
+                            Size:
+                            {{size}}
+                        </div>
+                        <br>
+                        <div>
+                            Speed:
+                            {{speed}}
+                        </div>
+                    {{/with}}
+                </div>
+
+                <br>
+
+                <div>
+                    {{> title data="Storage" big=false}}
+                    <br>
+
+                    {{#with storage}} 
+                        <div>
+                            Type:
+                            {{type}}
+                        </div>
+                        <br>
+                        <div>
+                            Size:
+                            {{size}}
+                        </div>
+                    {{/with}}
+                </div>
+
+                <br>
+
+                <div>
+                    {{> title data="Display" big=false}}
+                    <br>
+                    
+                    {{#with display}}
+                        <div>
+                            Size:
+                            {{size}}
+                        </div>
+                        <br>
+                        <div>
+                            Resolution:
+                            {{resolution}}
+                        </div>
+                        <br>
+                        <div>
+                            Technology:
+                            {{technology}}
+                        </div>
+                        <br>
+                        <div>
+                            Color space:
+                            {{color_space}}
+                        </div>
+                        <br>
+                        <div>
+                            Brightness:
+                            {{brightness}}
+                        </div>
+                        <br>
+                        <div>
+                            Refresh rate:
+                            {{refresh_rate}}
+                        </div>
+                    {{/with}}
+                </div>
+
+                <br>
+
+                <div>
+                    {{> title data="Graphics" big=false}}
+                    <br>
+                                        
+                    {{#with graphics}}
+                        <div>
+                            Brand:
+                            {{brand}}
+                        </div>
+                        <br>
+                        <div>
+                            Model:
+                            {{model}}
+                        </div>
+                        <br>
+                        <div>
+                            Memory:
+                            {{memory}}
+                        </div>
+                    {{/with}}
+                </div>
+
+                <br>
+
+                <div>
+                    {{> title data="Ports:" big=false}}
+                    
+                    <ul>
+                        {{#each ports}}
+                            <li>
+                                <div>
+                                    Type:
+                                    {{type}}
+                                </div>
+                                <br>
+                                <div>
+                                    Count:
+                                    {{count}}
+                                </div>
+                                {{#if features}}
+                                    <div>
+                                        <br>
+                                        <ul>
+                                            {{#each features}}
+                                                <li>
+                                                    {{this}}
+                                                </li>
+                                                <br>
+                                            {{/each}}
+                                        </ul>
+                                    </div>
+                                {{/if}}
+                            </li>
+                        {{/each}}
+                    </ul>
+                </div>
+
+                <br>
+
+                <div>
+                    {{> title data="Battery" big=false}}
+
+                    {{#with battery}}
+                        <div>
+                            Type:
+                            {{type}}
+                        </div>
+                        <br>
+                        <div>
+                            Capacity:
+                            {{capacity}}
+                        </div>
+                        <br>
+                        <div>
+                            Life:
+                            {{life}}
+                        </div>
+                    {{/with}}
+                </div>
+
+                <br>
+
+                <div>
+                    {{> title data="Weight" big=false}}
+                    Weight:
+                    {{weight}}
+                </div>
+
+                <br>
+
+                <div>
+                    {{> title data="Dimensions" big=false}}
+
+                    {{#with dimensions}}
+                        <div>
+                            Height:
+                            {{height}}
+                        </div>
+                        <br>
+                        <div>
+                            Width:
+                            {{width}}
+                        </div>
+                        <br>
+                        <div>
+                            Depth:
+                            {{depth}}
+                        </div>
+                    {{/with}}
+                </div>
+
+                <br>
+
+                <div>
+                    {{> title data="Operating system" big=false}}
+                    {{operating_system}}
+                </div>
+
+                <br>
+
+                <div>
+                    {{> title data="Accessories" big=false}}
+                    
+                    <ul>
+                        {{#each accessories}}
+                            <li>
+                                <div>
+                                    Name:
+                                    {{name}}
+                                </div>
+                                <br>
+                                <div>
+                                    Price:
+                                    {{price}}
+                                </div>
+                                <br>
+                            </li>
+                        {{/each}}
+                    </ul>
+                </div>
+
+            {{/with}}
+        </div>
+
+  </main>
+</div>

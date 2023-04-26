@@ -2,18 +2,17 @@
     <main>
         <div>
             {{#with page_header}}
-                <div class='display-1 text-center'>
-                    {{title}}
-                </div>
+                <h1 class="text-center">{{title}}</h1>
                 <br />
                 <p class='text-uppercase text-center'>
                     {{description}}
                 </p>
             {{/with}}
-    </div>
+        </div>
     <section>
         {{#with section}}
             <section class='card'>
+                <div class="card-body">
                 {{#with about_us}}
                     <div>
                         {{#with title_list}}
@@ -21,9 +20,9 @@
                                 {{main}}
                             </div>
                             <br />
-                            <div class='display-2 text-end'>
+                            <h2 class='text-end'>
                                 {{sub}}
-                            </div>
+                            </h2>
                         {{/with}}
                         <br />
                         <div>
@@ -34,94 +33,105 @@
                         {{/with}}
                     </div>
                 {{/with}}
+                </div>
             </section>
             <br>
             <section class="card">
-                {{#with advantage}}
-                    <div class='display-5'>
-                        {{title}}
-                    </div>
-                    <br>
-                    <section class="card">
-                        {{#with efficiency}}
-                            <div class="display-4">
-                                {{title}}
+                <div class="card-body">
+                    {{#with advantage}}
+                        <div class='display-5'>
+                            {{title}}
+                        </div>
+                        <br>
+                        <section class="card">
+                            <div class="card-body">
+                                {{#with efficiency}}
+                                    <div class="display-4">
+                                        {{title}}
+                                    </div>
+                                    <br>
+                                    <h6>{{sub_title}}</h6>
+                                    <br>
+                                    <p class="text-secondary">
+                                        {{description}}
+                                    </p>
+                                    {{> warning button=button}}
+                                {{/with}}
                             </div>
-                            <br>
-                            <div class="display-6">
-                                {{sub_title}}
+                        </section>
+                        <br>
+                        <section class="card">
+                            <div class="card-body">
+                                {{#with innovation}}
+                                    <div class="display-4 text-center">
+                                        {{title}}
+                                    </div>
+                                    <br>
+                                    <h6 class="text-center">
+                                        {{sub_title}}
+                                    </h6>
+                                    <br>
+                                    <p class="text-muted text-center">
+                                        {{description}}
+                                    </p>
+                                    {{> warning button=button}}
+                                {{/with}}
                             </div>
-                            <br>
-                            <p class="text-secondary">
-                                {{description}}
-                            </p>
-                            {{> warning button=button}}
-                        {{/with}}
-                    </section>
-                    <br>
-                    <section class="card">
-                        {{#with innovation}}
-                            <div class="display-4 text-center">
-                                {{title}}
+                        </section>
+                        <br>
+                        <section class="card">
+                            <div class="card-body">
+                                {{#with collaboration}}
+                                    <div class='display-4 text-end'>
+                                        {{title}}
+                                    </div>
+                                    <br>
+                                    <h6 class="text-end">
+                                        {{sub_title}}
+                                    </h6>
+                                    <br>
+                                    <p class="text-muted text-end">
+                                        {{description}}
+                                    </p>
+                                    {{> warning button=button}}
+                                {{/with}}
                             </div>
-                            <br>
-                            <div class="display-6 text-center">
-                                {{sub_title}}
-                            </div>
-                            <br>
-                            <p class="text-muted text-center">
-                                {{description}}
-                            </p>
-                            {{> warning button=button}}
-                        {{/with}}
-                    </section>
-                    <br>
-                    <section class="card">
-                        {{#with collaboration}}
-                            <div class='display-4 text-end'>
-                                {{title}}
-                            </div>
-                            <br>
-                            <div class="display-6 text-end">
-                                {{sub_title}}
-                            </div>
-                            <br>
-                            <p class="text-muted text-end">
-                                {{description}}
-                            </p>
-                            {{> warning button=button}}
-                        {{/with}}
-                    </section>
-                {{/with}}
+                        </section>
+                    {{/with}}
+                </div>
             </section>
             <br>
             <section class="card">
-                {{#with agreement}}
-                    <div class="display-5">
-                        {{title}}
-                    </div>
-                    <br>
-                    <section class="card">
-                        {{#with info}}
-                            <section class="display-5">
-                                {{sub_title}}
-                            </section>
-                            <br>
-                            <section class="card">
-                                <div class="card-body">
-                                    {{#with detail}}
-                                        <p class="text-secondary">
-                                            {{text}}
-                                        </p>
-                                        <button class="btn btn-success">
-                                            {{button}}
-                                        </button>
-                                    {{/with}}
-                                </div>
-                            </section>
-                        {{/with}}
-                    </section>
-                {{/with}}
+                <div class="card-body">
+                    {{#with agreement}}
+                        <div class="display-5">
+                            {{title}}
+                        </div>
+                        <br>
+                        <section class="card">
+                            <div class="card-body">
+                                {{#with info}}
+                                    <section class="display-5">
+                                        {{sub_title}}
+                                    </section>
+                                    <br>
+                                    <section class="card">
+                                        <div class="card-body">
+                                            {{#with detail}}
+                                                <p class="text-secondary">
+                                                    {{text}}
+                                                </p>
+                                                <button class="btn btn-success">
+                                                    {{button}}
+                                                </button>
+                                            {{/with}}
+                                        </div>
+                                    </section>
+                                {{/with}}
+                            </div>
+                        </section>
+                    {{/with}}
+                </div>
             </section>
         {{/with}}
     </section>

@@ -1,27 +1,7 @@
 <main>
     <div class="row">
 
-        <div class='card'>
-            <div class='nav'>
-            {{#with navigation}}
-                {{#each links}}
-                    <div class='nav-item m-1'>
-                        {{#if @last}}
-                            <a
-                                href='#'
-                                class='nav-link disabled'
-                            >{{text}}</a>
-                        {{else}}
-                            <a
-                                href={{href}}
-                                class='nav-link'
-                            >{{text}}</a>
-                        {{/if}}
-                    </div>      
-                {{/each}}
-            {{/with}}
-            </div>
-        </div>
+        {{> shopnav navigation=navigation}}
     
         <h1 class="my-5">{{header}}</h1>    
 

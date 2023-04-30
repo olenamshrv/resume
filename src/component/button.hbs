@@ -1,0 +1,21 @@
+<div class='mb-2'>
+  {{#if isSuccess}}
+    <button class='btn btn-success'>{{text}}</button>
+  {{/if}}
+  {{#if isDanger}}
+    <button class='btn btn-danger'>{{text}}</button>
+  {{/if}}
+  {{#if isInfo}}
+    <button
+      class='btn btn-info text-light'
+    >{{text}}</button>
+  {{/if}}
+  {{#if isPrimary}}
+    <button class='btn btn-primary'>{{text}}</button>
+  {{/if}}
+  {{#if isOutline}}
+    <button
+      class='btn btn-outline-primary'
+    >{{text}}</button>
+  {{/if}}
+</div>

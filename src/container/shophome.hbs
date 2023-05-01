@@ -1,14 +1,14 @@
 <main>
 
-    {{> shopnav navigation=navigation}}
+    {{> shopNavigation navigation=navigation}}
 
     <section>
         {{#with newsBlock}}
         <h5 class='text-center mt-5 mb-3'>{{title}}</h5>
 
-        <div class='row px-2'>
+        <div class='row'>
             {{#each cards}}
-                    <div class='card col-3 text-bg-dark gy-3'>
+                    <div class='card col-3 text-bg-dark gy-3 mx-1 px-0' style="width: 24.1%">
                         <div class='card-header'>
                             {{title}}
                             {{#if isNew}}
@@ -66,51 +66,14 @@
                 {{/each}}    
             </div>
 
-            <div class='row gy-4 px-2'>
-                {{#each cards}}
-                <div class='card col-4'>
-                    <img src={{image}} class='card-img-top' />
-                    <div class='card-body'>
-                    <h5 class='mb-2'>{{title}}
-                        {{#if isHot}}
-                        <span
-                            class='badge bg-warning rounded-pill text-uppercase'
-                        >Hot!</span>
-                        {{/if}}
-                        {{#if isNew}}
-                        <span
-                            class='badge bg-success rounded-pill'
-                        >Нове</span>
-                        {{/if}}
-                    </h5>
-                    <p>
-                        {{description}}
-                    </p>
-                    </div>
-                </div>
-                {{/each}}
-            </div>
+            {{> cardsWithImage cards=cards}}
 
         {{/with}}
     </section>
 
     <hr class='my-5' />
 
-    <section>
-        {{#with subscribe}}
-        <div class='card text-bg-dark'>
-            <div>
-                <h2 class='m-3'>{{header}}</h2>
-            </div>
-
-            <p class='ms-3'>
-                {{description}}
-            </p>
-
-            {{>buttons buttons=buttons}}
-        </div>
-        {{/with}}
-    </section>
+    {{> subscribe subscribe=subscribe}}
 
     <hr class='my-5' />
 
@@ -123,7 +86,7 @@
                     {{description}}
                 </p>
 
-                {{>buttons buttons=buttons}}
+                {{>buttons buttons=buttons primary=true}}
             </div>
         {{/with}}
     </section>

@@ -1,0 +1,20 @@
+{{#if isSuccess}}
+  <a href={{link}} class='btn btn-success me-2'>{{text}}</a>
+{{else if isOutline}}
+  <a
+    href={{link}}
+    class='btn btn-outline-success me-2'
+  >{{text}}</a>
+{{else if isDanger}}
+  <a
+    href={{link}}
+    class='btn btn-outline-danger me-2'
+  >{{text}}</a>
+{{else if isSecondary}}
+  <a
+    href={{link}}
+    class='btn btn-outline-secondary me-2'
+  >{{text}}</a>
+{{else}}
+  <a href={{link}} class='btn btn-primary'>{{text}}</a>
+{{/if}}

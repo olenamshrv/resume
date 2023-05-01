@@ -1,0 +1,15 @@
+    <section>
+        {{#with subscribe}}
+        <div class='card text-bg-dark'>
+            <div>
+                <h2 class='m-3'>{{header}}</h2>
+            </div>
+
+            <p class='ms-3'>
+                {{description}}
+            </p>
+
+            {{>buttons buttons=buttons primary=true}}
+        </div>
+        {{/with}}
+    </section>

@@ -1,7 +1,7 @@
 <main>
     <div class="row">
 
-        {{> shopnav navigation=navigation}}
+        {{> shopNavigation navigation=navigation}}
     
         <h1 class="my-5">{{header}}</h1>    
 
@@ -267,17 +267,6 @@
                 <div class="card pt-3 pb-2 mb-3">
                     {{#each action_block}}
                         {{> button this}}
-                        {{!-- <div class="mb-2">
-                            {{#if isSuccess}}
-                                <button class="btn btn-success">{{text}}</button>
-                            {{/if}}
-                            {{#if isDanger}}
-                                <button class="btn btn-danger">{{text}}</button>
-                            {{/if}}
-                            {{#if isInfo}}
-                                <button class="btn btn-info text-light">{{text}}</button>
-                            {{/if}}
-                        </div> --}}
                     {{/each}}
                 </div>
             

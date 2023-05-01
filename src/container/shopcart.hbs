@@ -1,0 +1,72 @@
+<main>   
+    {{> shopNavigation navigation=navigation}}
+
+    <div class="row">
+        
+        <section>
+            {{#with header}}
+                <h3 class="mt-5 mb-3">{{title}}</h3>
+
+                {{#with button}}
+                    <div>
+                        <a href="{{link}}" class="btn btn-outline-secondary">{{text}}</a>
+                    </div>
+                {{/with}}
+            {{/with}}
+        </section>
+
+        <div class="my-5 px-0">
+            <hr>
+        </div>
+
+        <div class="px-0">
+            {{#each goodsBlock}}
+                {{> cartGoodsItem this}}
+            {{/each}}
+        </div>
+
+        <div class="p-0 my-3">
+            <hr>
+        </div>
+
+        <section>
+            {{#with total}}
+                <h3>{{title}}</h3>
+                <h1>{{amount}}</h1>
+                <p>
+                    {{delivery}}
+                </p>
+             
+                <div class="mt-4">
+                    {{> buttons buttons=buttons}}
+                </div>
+              
+            {{/with}}
+        </section>
+
+        <div class="p-0 my-3">
+            <hr>
+        </div>
+
+        <section>
+            {{#with goodsOtherBlock}}
+                <h3 class="my-5 text-center">{{title}}</h3>
+
+                {{> cardsWithImage cards=cards}}
+            {{/with}}
+        </section>
+
+        <div class="my-5">
+            <hr>
+        </div>
+
+        {{> subscribe subscribe=subscribe}}
+
+        <div class="mt-5 mb-2">
+            <hr>
+        </div>
+
+    </div>
+</main>
+
+{{> shopfooter footer=footer}}

@@ -1,5 +1,18 @@
 {{#each buttons}}
-  <div class='ms-3 mb-3'>
-    <a href={{link}} class='btn btn-primary'>{{text}}</a>
-  </div>
+  {{#if isSuccess}}
+    <div class='mb-3'>
+      <a href={{link}} class='btn btn-success'>{{text}}</a>
+    </div>
+  {{else if isOutline}}
+    <div class='mb-3'>
+      <a
+        href={{link}}
+        class='btn btn-outline-success'
+      >{{text}}</a>
+    </div>
+  {{else}}
+    <div class='ms-3 mb-3'>
+      <a href={{link}} class='btn btn-primary'>{{text}}</a>
+    </div>
+  {{/if}}
 {{/each}}

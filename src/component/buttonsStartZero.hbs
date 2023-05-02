@@ -1,0 +1,14 @@
+{{#each buttons}}
+  {{#if isPrimary}}
+    <div class='ms-0 mb-3'>
+      <a href={{link}} class='btn btn-primary'>{{text}}</a>
+    </div>
+  {{else if isSecondary}}
+    <div class='ms-0'>
+      <a
+        href={{link}}
+        class='btn btn-secondary'
+      >{{text}}</a>
+    </div>
+  {{/if}}
+{{/each}}

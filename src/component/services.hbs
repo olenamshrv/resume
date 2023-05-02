@@ -1,0 +1,13 @@
+<section>
+    {{#with service}}
+        <div class='card text-bg-success text-center'>
+            <h2 class='my-3'>{{title}}</h2>
+
+            <p>
+                {{description}}
+            </p>
+
+            {{>buttons buttons=buttons primary=true}}
+        </div>
+    {{/with}}
+</section>

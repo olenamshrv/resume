@@ -1,0 +1,39 @@
+<div
+  class='card col-6 mb-2 px-0 mx-1'
+  style='width: 48.69%'
+>
+  <img class='card-img-top' src='{{img}}' />
+  <div class='card-body'>
+    
+  {{>badge this}}
+
+  <h5 class="mt-1">{{name}}</h5>
+
+  {{#with review}}
+    {{amount}} {{text}}
+  {{/with}}
+
+  <h3 class="my-3">{{price}}</h3>
+
+  <p>
+    {{delivery}}
+  </p>
+
+  <div class="ps-0">
+    {{>buttons buttons=buttons}}
+  </div>
+  
+  <div class="ms-3">
+    <ul class="ps-0 mb-0">
+            {{#each characteristics}}
+                <li>
+                    {{title}}: {{value}}
+                </li>
+            {{/each}}
+        </ul>
+  </div>
+  
+    
+  </div>
+
+</div>

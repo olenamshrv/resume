@@ -11,16 +11,7 @@
                     <div class='card col-3 text-bg-dark gy-3 mx-1 px-0' style="width: 24.1%">
                         <div class='card-header'>
                             {{title}}
-                            {{#if isNew}}
-                                <span
-                                class='badge bg-success rounded-pill'
-                                >Нова</span>
-                            {{/if}}
-                            {{#if isTop}}
-                                <span
-                                class='badge bg-danger rounded-pill'
-                                >Топ</span>
-                            {{/if}}
+                            {{>badge this}}
                         </div>
                         <div class='card-body'>
                             {{description}}

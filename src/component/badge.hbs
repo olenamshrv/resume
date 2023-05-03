@@ -1,0 +1,21 @@
+<div class='mb-3'>
+  {{#if isHot}}
+    <span
+      class='badge bg-warning rounded-pill text-uppercase mt-1'
+    >Hot!</span>
+  {{/if}}
+  {{#if isNew}}
+    <span
+      class='badge bg-primary rounded-pill mt-1'
+    >Нове</span>
+  {{/if}}
+</div>
+<div class='mt-1'>
+  {{#if isFast}}
+    <div class='badge bg-success mb-2'>Швидка доставка</div>
+  {{/if}}
+  {{#if isFree}}
+    <div class='badge bg-secondary mb-2'>Безкоштовна
+      доставка</div>
+  {{/if}}
+</div>

@@ -1,0 +1,119 @@
+<main>
+
+    {{>shopNavigation navigation=navigation}}
+
+    <div class="row mt-5 pe-0">
+
+
+        <ol class="breadcrumb">
+            {{#each breadcrumb}}
+                {{#if url includeZero=false}}
+                    <li class="breadcrumb-item">
+                        <a href="{{url}}" active>{{name}}</a>
+                    </li>
+                {{else}}
+                    <li class="breadcrumb-item">
+                        {{name}}
+                    </li>
+                {{/if}}
+            {{/each}}
+        </ol>
+
+        <h1 class="ps-0 mt-5 mb-4">{{header}}</h1>
+
+        <div class="row mt-1 mb-5">
+            {{#each sortBlock}}
+                <div class="col-3 ps-0">
+                    <select class="form-select">
+                        <option value="0" selected disabled>{{placeholder}}</option>                  
+                        {{#each options}}
+                            <option value={{value}}>{{text}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+            {{/each}}    
+        </div>
+
+        <div class="row mb-5 pe-0">
+            <div class="col-4 ps-0">
+                <div class="card">
+                    <div class="card-body">
+                        {{#with filterBlock}}
+                            {{#with sellers}}
+                                <p>
+                                    {{title}}
+                                </p>
+                                {{>options list=list}}
+                            {{/with}}
+
+                            <hr>
+
+                            {{#with brands}}
+                                <p>
+                                    {{title}}
+                                </p>
+                                {{#with input}}
+                                    <div class="form-input mb-3">
+                                        <input type="search" class="form-control" placeholder="{{placeholder}}">                                        
+                                    </div>
+                                {{/with}}
+                                {{>options list=options}}
+                            {{/with}}
+
+                            <hr>
+
+                            <div>
+                                {{#with price}}
+                                    <div class="mb-3">
+                                        {{title}}
+                                    </div>
+                                    {{#with range}}
+                                        <div class="mb-3">
+                                            <input type="text" class="form-control" placeholder="{{from}}">
+                                        </div>
+                                        <div class="mb-3">
+                                            <input type="text" class="form-control" placeholder="{{to}}">
+                                        </div>                                    
+                                    {{/with}}
+                                    {{>buttonsLine button isSecondary=true}}
+                                {{/with}}
+                            </div>
+
+                            <hr>
+
+                            <div>
+                                {{#each filterList}}
+                                    <div class="mb-3">
+                                        {{title}}
+                                    </div>
+                                    {{>options list=options}}
+                                    {{#unless @last}}
+                                        <hr>
+                                    {{/unless}}
+                                {{/each}}
+                            </div>
+
+                        {{/with}}
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-8">
+                <div class="row gy-2">
+                    {{#each goodsList}}
+                        {{>catalogItem this}}
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+
+        {{>services service=service}}
+    </div>
+
+</main>
+
+<div class="row mt-5 mb-2">
+    <hr>
+</div>
+
+{{>shopfooter footer=footer}}

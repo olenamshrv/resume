@@ -5,7 +5,7 @@
     <section>                  
             {{#with formBlock}}
                 <div class="row">
-                    <div class="col-8">
+                    <div class="col-8 ps-0">
                         <h1 class="mt-5 mb-4">{{header}}</h1>
 
                         <p class="mb-4">
@@ -64,7 +64,7 @@
                         {{/with}}                                        
                     </div>
 
-                    <div class="col-4">
+                    <div class="col-4 pe-0">
                         {{#with goodsInfo}}
                             <div class="card mt-5 mb-3">
                                 <div class="card-body">
@@ -97,21 +97,23 @@
             {{/with}}            
     </section>
 
-    <div class="my-5">
+    <div class="row my-5">
         <hr>
     </div>
 
-    <section>
+    <section class="row">
         {{#each reviewList}}
             {{>reviewItem this}}
         {{/each}}
     </section>
 
-    {{>services service=service}}
+    <div class="row">
+        {{>services service=service}}
+    </div>
 
 </main>
 
-<div class="mt-5 mb-2">
+<div class="row mt-5 mb-2">
     <hr>
 </div>
 

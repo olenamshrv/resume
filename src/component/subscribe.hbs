@@ -1,5 +1,5 @@
-    <section>
-        {{#with subscribe}}
+<section class="px-0">
+    {{#with subscribe}}
         <div class='card text-bg-dark'>
             <div>
                 <h2 class='m-3'>{{header}}</h2>
@@ -9,7 +9,10 @@
                 {{description}}
             </p>
 
-            {{>buttons buttons=buttons primary=true}}
+            <div class="ms-3">
+                {{>buttons buttons=buttons primary=true}}
+            </div>
+
         </div>
-        {{/with}}
-    </section>
+    {{/with}}
+</section>

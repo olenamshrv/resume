@@ -4,16 +4,7 @@
       <img src={{image}} class='card-img-top' />
       <div class='card-body'>
         <h5 class='mb-2'>{{title}}
-          {{#if isHot}}
-            <span
-              class='badge bg-warning rounded-pill text-uppercase mt-1'
-            >Hot!</span>
-          {{/if}}
-          {{#if isNew}}
-            <span
-              class='badge bg-primary rounded-pill mt-1'
-            >Нове</span>
-          {{/if}}
+          {{>badge this}}
         </h5>
         <p>
           {{description}}

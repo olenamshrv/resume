@@ -17,8 +17,15 @@
         class='btn btn-outline-danger'
       >{{text}}</a>
     </div>
+  {{else if isSecondary}}
+    <div class='mb-3'>
+      <a
+        href={{link}}
+        class='btn btn-secondary'
+      >{{text}}</a>
+    </div>
   {{else}}
-    <div class='ms-3 mb-3'>
+    <div class='mb-3'>
       <a href={{link}} class='btn btn-primary'>{{text}}</a>
     </div>
   {{/if}}

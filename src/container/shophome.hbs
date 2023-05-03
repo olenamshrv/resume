@@ -11,16 +11,7 @@
                     <div class='card col-3 text-bg-dark gy-3 mx-1 px-0' style="width: 24.1%">
                         <div class='card-header'>
                             {{title}}
-                            {{#if isNew}}
-                                <span
-                                class='badge bg-success rounded-pill'
-                                >Нова</span>
-                            {{/if}}
-                            {{#if isTop}}
-                                <span
-                                class='badge bg-danger rounded-pill'
-                                >Топ</span>
-                            {{/if}}
+                            {{>badge this}}
                         </div>
                         <div class='card-body'>
                             {{description}}
@@ -77,19 +68,7 @@
 
     <hr class='my-5' />
 
-    <section>
-        {{#with service}}
-            <div class='card text-bg-success text-center'>
-                <h2 class='my-3'>{{title}}</h2>
-
-                <p>
-                    {{description}}
-                </p>
-
-                {{>buttons buttons=buttons primary=true}}
-            </div>
-        {{/with}}
-    </section>
+    {{>services service=service}}
 
   <hr class='mt-5 mb-3' />
 

@@ -42,39 +42,7 @@
 
                 <div>
                     {{#each itemList}}
-                        <div class="row">
-                            <div class="col-3 mt-3">
-                                <p>
-                                    {{number}}
-                                </p>
-                                <h6>{{status}}</h6>
-                            </div>
-                            <div class="col-1">
-                            </div>
-                            <div class="col-2 mt-3">
-                                {{#with amount}}
-                                    <p>
-                                        {{title}}:
-                                    </p>
-                                    <div>
-                                        {{value}}
-                                    </div>
-                                {{/with}}
-                            </div>
-                            <div class="col-4">
-                                {{#each images}}
-                                    <img src="{{this}}" width="32%">
-                                {{/each}}
-                            </div>
-                            <div class="col-2 mt-4">
-                                {{#with button}}
-                                    {{> button this}}
-                                {{/with}}
-                            </div>
-                            <div class="my-1">
-                                <hr>
-                            </div>
-                        </div>
+
                     {{/each}}
                 </div>
 

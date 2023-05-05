@@ -6,47 +6,48 @@
         <hr>
 
         <section>
-            {{> title data="Users:" big=true}}
+            {{> title data="Users" big=true}}
             <hr>
             <ul>
                 {{#each users}}
                     <li>
-                        <div>
-                            {{> user id=id name=name gender=gender age=age}}
+                        <div class="row">
+                            <div class="col-3">
+                                {{> user main=true id=id name=name gender=gender age=age}}
+                            </div>
 
-                            <div>
-                                {{> title data="Friends:" big=false}}
-                                <ul>
+                            <div class="col-4">
+                                {{> title data="Friends" big=false}}
+                                <ul class="mt-4">
                                     {{#each friends}}
-                                        <li>
+                                        <li class="mb-4">
                                             {{> user id=id name=name gender=gender age=age}}
-                                            <br>
+                                            
                                             <div>
-                                                <div>
+                                                <div class="mt-3">
                                                     <strong>
                                                         <em>
-                                                            Mutual friends:
+                                                            Mutual friends
                                                         </em>
                                                     </strong>
-                                                </div>
-                                                <br>
-                                                <br>
-                                                <ul>
+                                                </div>                                                
+                                                
+                                                <ul class="mt-2">
                                                     {{#each mutual_friends}}
-                                                        <li>
+                                                        <li class="mb-2">
                                                             {{> user id=id name=name gender=gender age=age}}
                                                             {{#if mutual_friends}}
-                                                                <div>
+                                                                <div class="mt-2">
                                                                     <small>
                                                                         <div>
                                                                             <strong>
                                                                                 <em>
-                                                                                    Mutual friends:
+                                                                                    Mutual friends
                                                                                 </em>
                                                                             </strong>
                                                                         </div> 
-                                                                        <br>  
-                                                                        <ul>
+                                                                        
+                                                                        <ul class="mt-1">
                                                                             {{#each mutual_friends}}
                                                                                 <li>
                                                                                     {{> user id=id name=name gender=gender age=age}}
@@ -56,29 +57,28 @@
                                                                     </small>
                                                                 </div>
                                                             {{/if}}
-                                                            <br>
+                                                            
                                                         </li>
                                                     {{/each}}
                                                 </ul>
                                             </div>
 
-
-                                            {{> groups groups=groups internal=true}}
+                                            <div class="mt-3">
+                                                {{> groups groups=groups internal=true}}
+                                            </div>
                                             
                                         </li>
                                     {{/each}}
                                 </ul>
                             </div>
                             
-                            {{> groups groups=groups internal=false}}
-
-                            <br>
-                            <br>
+                            <div class="col-5">
+                                {{> groups groups=groups internal=false}}                                
+                            </div>
+                            
                         </div>
                         <hr>
-                    </li>
-                    <br>
-                    <br>
+                    </li>                    
                 {{/each}}
             </ul>
         </section>

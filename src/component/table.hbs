@@ -1,43 +1,41 @@
-<div>
-  <table>
-    <caption>
-      <strong>
-        <em>
-          {{name}}
-        </em>
-      </strong>
-    </caption>
-    <thead>
+<table class="table table-bordered">
+  <caption>
+    <strong>
+      <em>
+        {{name}}
+      </em>
+    </strong>
+  </caption>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>{{nameSub}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each row}}
       <tr>
-        <th>Name</th>
-        <th>Description</th>
-        <th>{{nameSub}}</th>
+        <td>
+          <code>
+            {{name}}
+          </code>
+        </td>
+        <td>
+          {{description}}
+        </td>
+        <td>
+          {{#if attributes}}
+              {{> subtable colName="Name" withType=false rowSub=attributes}}
+          {{/if}}
+          {{#if values}}
+              {{> subtable colName="Value" withType=false rowSub=values}}
+          {{/if}}
+          {{#if parameters}}
+              {{> subtable colName="Name" withType=true rowSub=parameters}}
+          {{/if}}
+        </td>
       </tr>
-    </thead>
-    <tbody>
-      {{#each row}}
-        <tr>
-          <td>
-            <b>
-              {{name}}
-            </b>
-          </td>
-          <td>
-            {{description}}
-          </td>
-          <td>
-            {{#if attributes}}
-                {{> subtable colName="Name" withType=false rowSub=attributes}}
-            {{/if}}
-            {{#if values}}
-                {{> subtable colName="Value" withType=false rowSub=values}}
-            {{/if}}
-            {{#if parameters}}
-                {{> subtable colName="Name" withType=true rowSub=parameters}}
-            {{/if}}
-          </td>
-        </tr>
-      {{/each}}
-    </tbody>
-  </table>
-</div>
+    {{/each}}
+  </tbody>
+</table>

@@ -1,21 +1,19 @@
-<main>
-
+<main class='mb-5'>
   <section class='row'>
     {{#with navigation}}
-      {{! <div class='col-6'> }}
       {{#each links}}
-        <div class='col-1'>
+        <div class='col-1 mt-3'>
           <a
             href={{href}}
-            class='btn btn-link'
+            class='btn btn-link mt-3'
             role='button'
           >{{text}}
           </a>
         </div>
-        <div class='col-1'></div>
+        <div class='col-1 mt-3'></div>
       {{/each}}
       <div class='col-6'>
-        <div>
+        <div class='mt-4'>
           {{#with button}}
             <a
               href='{{href}}'
@@ -27,39 +25,32 @@
       </div>
     {{/with}}
   </section>
-
   <hr />
-
   <section class='row'>
     {{#with header}}
-      <div class='col-12'>
+      <div class='col-12 mt-5'>
         <h1>{{title}}</h1>
       </div>
-      <p class='text-muted'>
+      <p class='text-muted mt-4 mb-4'>
         {{description}}
       </p>
       <div class='col-2'>
         {{#with button}}
           <a
             href={{link}}
-            class='btn btn-primary'
+            class='btn btn-primary mb-5'
             role='button'
           >{{text}}</a>
         {{/with}}
       </div>
     {{/with}}
   </section>
-
   <hr />
-
-  {{! <section class col-12> }}
   {{#with city}}
-    <h2>{{title}}</h2>
-
+    <h2 class='mt-5 mb-5'>{{title}}</h2>
     <div class='row'>
       {{#each cards}}
-
-        <div class='card col-5 gx-3 gy-5'>
+        <div class='card col-5 px-0 me-2 mb-4'>
           {{#with picture}}
             <img
               src={{src}}
@@ -67,13 +58,11 @@
               alt={{alt}}
             />
           {{/with}}
-
           <div class='card-body'>
-            <h5 class='card-title text-capitalize'>
+            <h5 class='card-title text-capitalize mb-3'>
               {{title}}
             </h5>
-
-            <p>
+            <p class='mb-3'>
               {{description}}
             </p>
             {{#with button}}
@@ -82,24 +71,17 @@
                 class='btn btn-primary'
               >{{text}}</a>
             {{/with}}
-
           </div>
-
         </div>
-
       {{/each}}
+      <hr class='mt-5' />
     </div>
-
   {{/with}}
-
-  <hr />
-
   <section>
     {{#with winner}}
-      <h2>{{title}}</h2>
-
+      <h2 class='my-5'>{{title}}</h2>
       {{#with table}}
-        <table class='table'>
+        <table class='table mb-5'>
           <thead>
             <tr>
               {{#each head}}
@@ -119,21 +101,20 @@
           </tbody>
         </table>
       {{/with}}
-
     {{/with}}
   </section>
-
-  <hr />
-
+  <div class='row'>
+    <hr />
+  </div>
   <section>
-
     {{#with gallery}}
-
-      <h2>{{title}}</h2>
-
+      <h2 class='my-5'>{{title}}</h2>
       <div class='row'>
         {{#each cards}}
-          <div class='card col-4 gx-5'>
+          <div
+            class='card col-4 px-0 me-2'
+            style='width:32.5%'
+          >
             <div class='card-header'>
               {{name}}
             </div>
@@ -147,30 +128,27 @@
           </div>
         {{/each}}
       </div>
-
     {{/with}}
-
   </section>
-
-  <hr />
-
+  <div class='row mt-5 mb-3'>
+    <hr />
+  </div>
   <section>
-
     {{#with relaxion}}
-      <div class='display-3'>
+      <div class='display-3 mb-4'>
         {{title}}
       </div>
-
-      <br />
-
-      <div class='row gy-3 gx-2'>
+      <div class='row'>
         {{#each cards}}
-          <div class='card text-bg-secondary col-5'>
+          <div
+            class='card text-bg-secondary col-5 px-0 gy-4 me-2'
+            style='width:39%'
+          >
             <div class='card-header'>
               {{header}}
             </div>
             <div class='card-body'>
-              <h5 class='card-title'>
+              <h5 class='card-title mb-3'>
                 {{title}}
               </h5>
               <p>{{description}}</p>
@@ -178,19 +156,19 @@
           </div>
         {{/each}}
       </div>
-
     {{/with}}
-
   </section>
-
-  <hr />
-
+  <div class='row my-5'>
+    <hr />
+  </div>
   <section>
     {{#with rest}}
-
       <div class='row'>
         {{#each cards}}
-          <div class='card text-center col-6'>
+          <div
+            class='card text-center col-6 px-0 me-2'
+            style='width: 49.2%'
+          >
             <div class='card-header'>
               {{header}}
             </div>
@@ -209,47 +187,38 @@
           </div>
         {{/each}}
       </div>
-
     {{/with}}
   </section>
-
-  <hr />
-
+  <div class='row mt-5 mb-3'>
+    <hr />
+  </div>
   <section>
-
     {{#with proposition}}
-      <div class='display-2'>{{title}}</div>
-
-      <br />
-
+      <div class='display-2 mb-5'>{{title}}</div>
       <div class='row'>
         {{#each card}}
-          <div class='card text-light bg-warning col-5'>
+          <div
+            class='card text-light bg-warning col-5 px-0 me-2'
+          >
             <div class='card-header'>{{header}}</div>
             <div class='card-body'>
-              <h5 class='card-subtitle'>{{title}}</h5>
-              <p>
+              <h5 class='card-subtitle mb-3'>{{title}}</h5>
+              <p class='mb-0'>
                 {{description}}
               </p>
             </div>
           </div>
         {{/each}}
       </div>
-
     {{/with}}
-
   </section>
-
-  <hr />
-
+  <div class='row mt-5 mb-3'>
+    <hr />
+  </div>
   <section>
     {{#with footer}}
-      <h5>{{title}}</h5>
-
-      <br />
-
       <div class='row'>
-
+        <h5 class='ps-0 mb-4'>{{title}}</h5>
         <div class='col-1'>
           {{#each navigation}}
             <div>
@@ -258,9 +227,7 @@
             <br />
           {{/each}}
         </div>
-
         <div class='col-2'></div>
-
         <div class='col-1'>
           {{#each socialMedia}}
             <div>
@@ -273,25 +240,21 @@
             <br />
           {{/each}}
         </div>
-
         <div class='col-2'></div>
-
         <div class='col-1'>
           {{#each partners}}
             <div>
               <a
                 href={{link}}
                 class='btn btn-outline-info'
+                style='width: 170px'
               >{{name}}</a>
             </div>
             <br />
           {{/each}}
         </div>
-
         <div class='col-2'></div>
       </div>
-
     {{/with}}
   </section>
-
 </main>

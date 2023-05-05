@@ -1,56 +1,53 @@
 {{#if groups}}                                        
-    <div>
-        {{#if internal}}
-            <div>
-                <strong>
-                    <em>
-                        Groups:
-                    </em>
-                </strong>
-            </div>
-        {{else}}
-            {{> title data="Groups:" big=false}}
-        {{/if}}
-        <br>
+    {{#if internal}}
+        <div>
+            <strong>
+                <em>
+                    Groups
+                </em>
+            </strong>
+        </div>
+    {{else}}
+        {{> title data="Groups" big=false}}
+    {{/if}}
 
-        <ul>
-            {{#each groups}}
-                <li>
-                    <div>
-                        ID:
-                        {{id}}
-                    </div>
-                    <br>
-                    <div>
-                        <b>
-                            Name:
-                        </b>
+    {{#if internal}}
+        <ul class="mt-2">
+    {{else}}
+        <ul class="mt-4">
+    {{/if}}
+        {{#each groups}}
+            <li class="mb-3">             
+                <div class="mb-1">
+                    <b>
                         {{name}}
-                    </div>
-                    <br>
-                    <div>
-                        Description:
-                        {{description}}
-                    </div>
-                    <br>
-                    <div>
-                        <strong>
-                            <em>
-                                Members:
-                            </em>
-                        </strong>
-                        <br>
-                        <br>
-                        <ul>
-                            {{#each members}}
-                                <li>
-                                    {{> user id=id name=name gender=gender age=age}}
-                                </li>
-                            {{/each}}
-                        </ul>
-                    </div>
-                </li>
-            {{/each}}
-        </ul>
-    </div>
+                    </b>
+                </div>   
+                <div class="mb-1">
+                    ID:
+                    {{id}}
+                </div>               
+                <div class="mb-1">
+                    Description:
+                    {{description}}
+                </div>
+
+                <div class="mt-3">
+                    <strong>
+                        <em>
+                            Members
+                        </em>
+                    </strong>
+                    
+                    <ul class="mt-2">
+                        {{#each members}}
+                            <li class="mb-2">
+                                {{> user id=id name=name gender=gender age=age}}
+                            </li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </li>
+        {{/each}}
+    </ul>
 {{/if}}

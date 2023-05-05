@@ -1,12 +1,14 @@
-<div>
-  {{#if withName}}
-    {{name}}:
-  {{/if}}
-  <ul>
-    {{#each items}}
-      <li>
-        {{this}}
-      </li>
-    {{/each}}
-  </ul>
-</div>
+{{#if withName}}
+  <em>
+    <b>
+      {{name}}:
+    </b>
+  </em>
+{{/if}}
+<ul>
+  {{#each items}}
+    <li>
+      {{this}}
+    </li>
+  {{/each}}
+</ul>

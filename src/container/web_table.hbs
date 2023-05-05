@@ -4,26 +4,25 @@
         <div>
             {{> title data="Languages" big=true}}
             <hr>
-            <br>
+            
             <ul>
                 {{#each languages}}
                     <li>
-                        <strong>{{name}}</strong>
-                        <br>
-                        <br>
-                        <div>
+                        <div class="mb-1">
+                            <strong>{{name}}</strong>                        
+                        </div>
+                        
+                        <div class="mb-1">
                             Version:
                             {{version}}
                         </div>
-                        <br>
-                        <div>
+                        
+                        <div class="mb-3">
                             Description:
                             <em>
                                 {{description}}
                             </em>
-                        </div>
-
-                        <br>
+                        </div>                        
 
                         {{#if elements}} 
                             {{> table name="Elements" nameSub="Attributes" row=elements}}
@@ -38,9 +37,9 @@
                         {{/if}}
                      
                     </li>
-                    <br>
+                    
                     <hr>
-                    <br>
+                    
                 {{/each}}
             </ul>
         </div>

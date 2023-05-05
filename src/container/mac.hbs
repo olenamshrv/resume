@@ -1,289 +1,271 @@
-<div>
-  <main>
-        {{> title data=name giant=true}}
+<main>
+    {{> title data=name giant=true}}
 
-        <br>
-
+    <div class="ms-3">
         <div>
-            Description
+            Description:
             {{description}}
         </div>
-        <br>
+        
         <div>
-            Price
+            Price:
             {{price}}
         </div>
-        <br>
+        
         <div>
-            Category
+            Category:
             {{category}}
         </div>
-        <br>
-        <br>
-        <div>
-            {{> title data="Features" big=true}}
-            <hr>
-            <br>
-
-            {{#with features}}
-                <div>
-                    {{> title data="Processor" big=false}}
-                    <br>
-
-                    {{#with processor}}
-                        <div>
-                            Brand:
-                            {{brand}}
-                        </div>
-                        <br>
-                        <div>
-                            Model:
-                            {{model}}
-                        </div>
-                        <br>
-                        <div>
-                            Speed:
-                            {{speed}}
-                        </div>
-                        <br>
-                        <div>
-                            Cores:
-                            {{cores}}
-                        </div>
-                        <br>     
-                        <div>
-                            Cache:
-                            {{cache}}
-                        </div>                    
-                    {{/with}}
-                </div>
-
-                <br>
-
-                <div>
-                    {{> title data="Memory" big=false}}
-                    <br>
-                    {{#with memory}}
-                        <div>
-                            Type:
-                            {{type}}
-                        </div>
-                        <br>
-                        <div>
-                            Size:
-                            {{size}}
-                        </div>
-                        <br>
-                        <div>
-                            Speed:
-                            {{speed}}
-                        </div>
-                    {{/with}}
-                </div>
-
-                <br>
-
-                <div>
-                    {{> title data="Storage" big=false}}
-                    <br>
-
-                    {{#with storage}} 
-                        <div>
-                            Type:
-                            {{type}}
-                        </div>
-                        <br>
-                        <div>
-                            Size:
-                            {{size}}
-                        </div>
-                    {{/with}}
-                </div>
-
-                <br>
-
-                <div>
-                    {{> title data="Display" big=false}}
-                    <br>
-                    
-                    {{#with display}}
-                        <div>
-                            Size:
-                            {{size}}
-                        </div>
-                        <br>
-                        <div>
-                            Resolution:
-                            {{resolution}}
-                        </div>
-                        <br>
-                        <div>
-                            Technology:
-                            {{technology}}
-                        </div>
-                        <br>
-                        <div>
-                            Color space:
-                            {{color_space}}
-                        </div>
-                        <br>
-                        <div>
-                            Brightness:
-                            {{brightness}}
-                        </div>
-                        <br>
-                        <div>
-                            Refresh rate:
-                            {{refresh_rate}}
-                        </div>
-                    {{/with}}
-                </div>
-
-                <br>
-
-                <div>
-                    {{> title data="Graphics" big=false}}
-                    <br>
-                                        
-                    {{#with graphics}}
-                        <div>
-                            Brand:
-                            {{brand}}
-                        </div>
-                        <br>
-                        <div>
-                            Model:
-                            {{model}}
-                        </div>
-                        <br>
-                        <div>
-                            Memory:
-                            {{memory}}
-                        </div>
-                    {{/with}}
-                </div>
-
-                <br>
-
-                <div>
-                    {{> title data="Ports:" big=false}}
-                    
-                    <ul>
-                        {{#each ports}}
-                            <li>
-                                <div>
-                                    Type:
-                                    {{type}}
-                                </div>
-                                <br>
-                                <div>
-                                    Count:
-                                    {{count}}
-                                </div>
-                                {{#if features}}
+    </div>
+             
+    <section class="mt-4">
+        {{> title data="Features" big=true}}
+        
+        <hr>    
+  
+        <div class="ms-5">
+            <div class="row">
+                {{#with features}}
+                
+                    <div class="col-4">
+                        <div class="mb-3">
+                            {{> title data="Processor" big=false}}
+                        
+                            <div class="ms-4">
+                                {{#with processor}}
                                     <div>
-                                        <br>
-                                        <ul>
-                                            {{#each features}}
-                                                <li>
-                                                    {{this}}
-                                                </li>
-                                                <br>
-                                            {{/each}}
-                                        </ul>
+                                        Brand:
+                                        {{brand}}
+                                    </div>                        
+                                    <div>
+                                        Model:
+                                        {{model}}
+                                    </div>                        
+                                    <div>
+                                        Speed:
+                                        {{speed}}
+                                    </div>                        
+                                    <div>
+                                        Cores:
+                                        {{cores}}
+                                    </div>                                
+                                    <div>
+                                        Cache:
+                                        {{cache}}
+                                    </div>                    
+                                {{/with}}
+                            </div>  
+                        </div>          
+
+                        <div class="mb-3">
+                            {{> title data="Memory" big=false}}
+                            
+                            <div class="ms-4">
+                                {{#with memory}}
+                                    <div>
+                                        Type:
+                                        {{type}}
+                                    </div>                    
+                                    <div>
+                                        Size:
+                                        {{size}}
+                                    </div>                    
+                                    <div>
+                                        Speed:
+                                        {{speed}}
                                     </div>
-                                {{/if}}
-                            </li>
-                        {{/each}}
-                    </ul>
-                </div>
-
-                <br>
-
-                <div>
-                    {{> title data="Battery" big=false}}
-
-                    {{#with battery}}
-                        <div>
-                            Type:
-                            {{type}}
+                                {{/with}}
+                            </div>
                         </div>
-                        <br>
-                        <div>
-                            Capacity:
-                            {{capacity}}
+                        
+                        <div class="mb-3">
+                            {{> title data="Storage" big=false}}
+                            
+                            <div class="ms-4">
+                                {{#with storage}} 
+                                    <div>
+                                        Type:
+                                        {{type}}
+                                    </div>                    
+                                    <div>
+                                        Size:
+                                        {{size}}
+                                    </div>
+                                {{/with}}
+                            </div>
                         </div>
-                        <br>
-                        <div>
-                            Life:
-                            {{life}}
+                        
+                        <div class="mb-3">
+                            {{> title data="Display" big=false}}                
+                            
+                            <div class="ms-4">
+                                {{#with display}}
+                                    <div>
+                                        Size:
+                                        {{size}}
+                                    </div>                  
+                                    <div>
+                                        Resolution:
+                                        {{resolution}}
+                                    </div>                   
+                                    <div>
+                                        Technology:
+                                        {{technology}}
+                                    </div>                    
+                                    <div>
+                                        Color space:
+                                        {{color_space}}
+                                    </div>                    
+                                    <div>
+                                        Brightness:
+                                        {{brightness}}
+                                    </div>                    
+                                    <div>
+                                        Refresh rate:
+                                        {{refresh_rate}}
+                                    </div>
+                                {{/with}}
+                            </div>
                         </div>
-                    {{/with}}
-                </div>
+                    </div>
 
-                <br>
+                    <div class="col-4 ps-0 pe-1">
+                        <div class="mb-3">
+                            {{> title data="Graphics" big=false}}
 
-                <div>
-                    {{> title data="Weight" big=false}}
-                    Weight:
-                    {{weight}}
-                </div>
-
-                <br>
-
-                <div>
-                    {{> title data="Dimensions" big=false}}
-
-                    {{#with dimensions}}
-                        <div>
-                            Height:
-                            {{height}}
+                            <div class="ms-4">
+                                {{#with graphics}}
+                                    <div>
+                                        Brand:
+                                        {{brand}}
+                                    </div>                    
+                                    <div>
+                                        Model:
+                                        {{model}}
+                                    </div>                    
+                                    <div>
+                                        Memory:
+                                        {{memory}}
+                                    </div>
+                                {{/with}}
+                            </div>
                         </div>
-                        <br>
-                        <div>
-                            Width:
-                            {{width}}
+
+                        <div class="mb-3">
+                            {{> title data="Ports" big=false}}
+                            
+                            <ul class="ms-3">
+                                {{#each ports}}
+                                    <li class="mb-1">
+                                        <div class="mb-2">
+                                            Type:
+                                            {{type}}
+                                        </div>                                
+                                        <div>
+                                            Count:
+                                            {{count}}
+                                        </div>
+                                        <div class="mt-2">
+                                            {{#if features}}    
+                                                Features:                              
+                                                <ul class="mt-1 mb-2">                                        
+                                                    {{#each features}}
+                                                        <li>
+                                                            {{this}}
+                                                        </li>                                                
+                                                    {{/each}}
+                                                </ul>
+                                            {{/if}}
+                                        </div>
+                                    </li>
+                                {{/each}}
+                            </ul>
+                        </div>            
+
+                        <div class="mb-3">
+                            {{> title data="Battery" big=false}}
+
+                            <div class="ms-4">
+                                {{#with battery}}
+                                    <div>
+                                        Type:
+                                        {{type}}
+                                    </div>
+                                    
+                                    <div>
+                                        Capacity:
+                                        {{capacity}}
+                                    </div>
+                                    
+                                    <div>
+                                        Life:
+                                        {{life}}
+                                    </div>
+                                {{/with}}
+                            </div>
                         </div>
-                        <br>
-                        <div>
-                            Depth:
-                            {{depth}}
+                    </div>
+                
+                    <div class="col-4 ps-5">
+                        <div class="mb-3">
+                            {{> title data="Weight" big=false}}
+                            
+                            <div class="ms-4">
+                                Weight:
+                                {{weight}}
+                            </div>
                         </div>
-                    {{/with}}
-                </div>
 
-                <br>
+                        <div class="mb-3">
+                            {{> title data="Dimensions" big=false}}
 
-                <div>
-                    {{> title data="Operating system" big=false}}
-                    {{operating_system}}
-                </div>
+                            <div class="ms-3">
+                                {{#with dimensions}}
+                                    <div>
+                                        Height:
+                                        {{height}}
+                                    </div>                        
+                                    <div>
+                                        Width:
+                                        {{width}}
+                                    </div>                        
+                                    <div>
+                                        Depth:
+                                        {{depth}}
+                                    </div>
+                                {{/with}}
+                            </div>
+                        </div>            
 
-                <br>
+                        <div class="mb-3">
+                            {{> title data="Operating system" big=false}}
 
-                <div>
-                    {{> title data="Accessories" big=false}}
-                    
-                    <ul>
-                        {{#each accessories}}
-                            <li>
-                                <div>
-                                    Name:
-                                    {{name}}
-                                </div>
-                                <br>
-                                <div>
-                                    Price:
-                                    {{price}}
-                                </div>
-                                <br>
-                            </li>
-                        {{/each}}
-                    </ul>
-                </div>
+                            <div class="ms-4">
+                                {{operating_system}}
+                            </div>
+                        </div>            
 
-            {{/with}}
-        </div>
+                        <div class="mb-5">
+                            {{> title data="Accessories" big=false}}
+                            
+                            <ul class="ms-3">
+                                {{#each accessories}}
+                                    <li class="mb-2">
+                                        <div class="mb-1">
+                                            {{name}}
+                                        </div>                            
+                                        <div>
+                                            Price:
+                                            {{price}}
+                                        </div>                            
+                                    </li>
+                                {{/each}}
+                            </ul>
+                        </div>
+                    </div>
 
-  </main>
-</div>
+                {{/with}}
+            </div>
+         </div>
+    </section>
+</main>

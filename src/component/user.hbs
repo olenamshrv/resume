@@ -1,22 +1,23 @@
-<div>
+<div class='mb-1'>
+  {{#if main}}
+    <h3>
+      {{name}}
+    </h3>
+  {{else}}
+    <b>
+      {{name}}
+    </b>
+  {{/if}}
+</div>
+<div class='mb-1'>
   ID:
   {{id}}
 </div>
-<br />
-<div>
-  <strong>
-    Name:
-  </strong>
-  {{name}}
-</div>
-<br />
-<div>
+<div class='mb-1'>
   Gender:
   {{gender}}
 </div>
-<br />
-<div>
+<div class='mb-1'>
   Age:
   {{age}}
 </div>
-<br />

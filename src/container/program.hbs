@@ -1,12 +1,11 @@
-<div>
-  <main>
+<main class="mb-5">
     {{#with program}}
       {{> title data="Program" giant=true}}
-      <hr>
+      <hr class="mb-3">
         <section>
             {{> title data='Excursion' big=true}}
             {{#with excursion}}
-                <div>
+                <div class="mb-4">
                     <strong>{{name}}</strong> in 
                     {{#with location}}
                         <em>
@@ -21,33 +20,26 @@
                             {{date}}
                         </b>
                     </em>
-                </div>
-
-                <br>
-                <br>
-
+                </div>                            
                 <div>
                     <em>
                         {{> title data="Program"}}
                     </em>
-                    <ul>
+                    <ul class="mt-4 mt-4">
                         {{#each program}}
-                            <li>
+                            <li class="mb-4">
                                 <div>
-                                    <strong>
+                                    <h5>
                                         {{name}}
-                                    </strong>
+                                    </h5>
                                 </div>
-
-                                <br>
-
                                 <div>
                                     Type: 
                                     <em>
                                         {{type}}
                                     </em>
                                 </div>
-                                <div>
+                                <div class="mb-2">
                                     Duration:
                                     <em>
                                         {{duration}}
@@ -58,103 +50,84 @@
                                     {{#with details}}
                                         {{#with museum}}
                                             <div>
-                                                <h4>{{name}}</h4>
+                                                <h5>{{name}}</h5>
                                                 <div>  
                                                     {{> location address=address city=city country=country}}                                             
-                                                </div>
-                                                
+                                                </div>                                                
                                                 <div>
                                                     <h5>
                                                         <em>
                                                             Exhibits:
                                                         </em>
-                                                    <h5>
-                                                    <ul>
+                                                    </h5>
+                                                    <ul class="mt-3">
                                                         {{#each exhibits}}
-                                                            <li>
-                                                                <h4>{{name}}</h4>
+                                                            <li class="mb-3">
+                                                                <h5>{{name}}</h5>
                                                                 {{#if artist includeZero=true}}
-                                                                    <div>
+                                                                    <div class="mb-1">
                                                                         Artist:
                                                                         <em>
                                                                             {{artist}}
                                                                         </em>
-                                                                    </div>
-                                                                    <br>
+                                                                    </div>                                                                    
                                                                 {{/if}}
-
-                                                                <div>
+                                                                <div class="mb-1">
                                                                     Description:
                                                                     {{description}}
                                                                 </div>
                                                                 {{#if audio_guide}}
-                                                                    <div>
-                                                                        <br>
+                                                                    <div class="mb-1">                                                                        
                                                                         With audio guide
                                                                     </div>
-                                                                {{/if}}
-                                                                <br>
+                                                                {{/if}}                                                                
                                                             </li>
                                                         {{/each}}
                                                     </ul>
                                                 </div>
                                             </div>    
-                                    {{/with}}
+                                        {{/with}}
                                 </div>
-
                                 {{#with venue}}
-                                    <div>
-                                            <br>
-                                            <div>
-                                                Venue: 
-                                                <em>
-                                                    <b>
-                                                        {{name}}
-                                                    </b>
-                                                </em>
-                                            </div>
-                                            
-                                            <br>
-                                            
-                                            <div>
-                                                {{> location address=address city=city country=country}}
-                                            </div>
+                                    <div>                                            
+                                        <div>
+                                            Venue: 
+                                            <em>
+                                                <b>
+                                                    {{name}}
+                                                </b>
+                                            </em>
+                                        </div>
+                                        <div class="mt-2">
+                                            {{> location address=address city=city country=country}}
+                                        </div>
                                     </div>
                                 {{/with}}
-                                    
 
-
-                                    {{#if performers}}  
-                                        <div>
-                                            <br>
-                                            <strong>Performers</strong>                                      
-                                            <br>
-                                            <br>
-                                            <ul>
-                                                
+                                {{#if performers}}  
+                                    <div>                                            
+                                        <strong>Performers</strong>                                      
+                                            <ul class="mt-2">                                                
                                                 {{#each performers}}
-                                                    <li>
+                                                    <li class="mb-2">
                                                         <div>
                                                             <b>
                                                                 {{name}}
                                                             </b>
                                                         </div>    
-                                                        <div>
+                                                        <div class="mt-1">
                                                             <em>
                                                                 {{type}}
                                                             </em>
-                                                        </div>
-                                                        <br>
+                                                        </div>                                                        
                                                     </li>
                                                 {{/each}}
                                             </ul>
                                         </div>                                            
                                     {{/if}}
-
-
-                                    <div>
+                                    <div class="mt-4">
                                         {{#with guide}}
-                                            <h4>Guide</h4>
+                                            <h5>Guide</h5>
                                             <div>
                                                 Name: 
                                                 <em>
@@ -173,16 +146,12 @@
                                             </div>
                                         {{/with}}
                                     </div>
-                                {{/with}}
-                                <br>
-                            </li>
-                            <br>
+                                {{/with}}                                
+                            </li>                            
                         {{/each}}
                     </ul>
                 </div>
-
             {{/with}}
         </section>
     {{/with}}
-  </main>
-</div>
+</main>

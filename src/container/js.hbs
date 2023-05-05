@@ -1,104 +1,98 @@
-<div>
-    <main>
-        {{> title data=name giant=true}}
-        <hr>
+<main>
+    {{> title data=name giant=true}}
+    <hr class="mb-4">
 
-        <section>
-            <div>
-                <div>
-                    <em>
-                        <strong>
-                            About {{name}}
-                        </strong>
-                    </em>
-                </div>
-                <br>
-                <div>
-                    {{description}}
-                </div>
-            </div>
-        </section>
+    <section>
+        <div>
+            <em>
+                <strong>
+                    About {{name}}
+                </strong>
+            </em>
+        </div>
+        <p class="mt-3">
+            {{description}}
+        </p>
+    </section>
 
-        <hr>
+    <hr class="mt-4">
 
-        <section>
-            {{> title data="History" big=true}}
-            <div>
-                {{#with history}}
-                    Was founded in {{year}} by {{founder}}
-                {{/with}}
-            </div>
-        </section> 
+    <section>
+        {{> title data="History" big=true}}
+        <div>
+            {{#with history}}
+                Was founded in {{year}} by {{founder}}
+            {{/with}}
+        </div>
+    </section> 
 
-        <br>  
+    <hr class="mt-4">
 
-        <hr>
+    {{> section section="Types" hasName=false things=types}}
 
-        <br>
+    <hr class="mt-4">
 
-        {{> section section="Types" hasName=false things=types}}
-        
-        <br>
+    <section>
+        {{> title data="Syntax" big=true}}
 
-        <hr>
-
-        <section>
-            {{> title data="Syntax" big=true}}
+        <div class="ms-3">
             {{#with syntax}}
                 {{> list withName=true name='Variables' items=variables}}
-                {{> list hwithName=true name='Functions' items=functions}}
+                {{> list withName=true name='Functions' items=functions}}
                 {{> list withName=true name='Conditionals' items=conditionals}}
                 {{> list withName=true name='Loops' items=loops}}
                 {{> list withName=true name='Classes' items=classes}}
             {{/with}}
-        </section>
+        </div>
+    </section>
 
-        <hr>
+    <hr class="mt-4">
 
-        {{> section section="Features" hasName=false things=features}}
+    {{> section section="Features" hasName=false things=features}}
 
-        <hr>
+    <hr class="mt-4">
 
-        {{> section section="Libraries" hasName=false things=libraries}}
+    {{> section section="Libraries" hasName=false things=libraries}}
 
-        <hr>
+    <hr class="mt-4">
 
-        {{> section section="Tools" hasName=false things=tools}}
+    {{> section section="Tools" hasName=false things=tools}}
 
-        <hr>
+    <hr class="mt-4">
 
-        <table>
-            <caption>
-                <strong>
-                    <h2>
-                        Community
-                    </h2>
-                </caption>
-            <thead>
-                <tr>
-                    <th>
-                        Name
-                    </th>
-                    <th>
-                        Type
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                {{#each community}}
-                    <tr>
-                        <td>
-                            {{name}}
-                        </td>
-                        <td>
-                            {{type}}
-                        </td>
-                    </tr>
-                {{/each}}
-            </tbody>
-        </table>
+    
+    <section>
+        {{> title data="Community" big=true}}
 
-        <br>
+        <div class="row mt-4">
+            <div class="col-4">
+                <table class="table table-bordered mb-5">
+                    <caption class="mt-1">Community</caption>
+                    <thead>        
+                        <tr>
+                            <th>
+                                Name
+                            </th>
+                            <th>
+                                Type
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each community}}
+                            <tr>
+                                <td>
+                                    {{name}}
+                                </td>
+                                <td>
+                                    {{type}}
+                                </td>
+                            </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+         </div>
+    </section>
 
-    </main>
-</div>
+</main>
